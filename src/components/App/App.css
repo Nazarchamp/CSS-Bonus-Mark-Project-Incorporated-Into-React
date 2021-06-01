@@ -1,0 +1,195 @@
+/*Global Variables for Color*/
+
+
+/*Mixins for flex and general div syle*/
+
+
+/*Make the APp logo spin infinitely linearly*/
+
+#App-logo {
+	height: 2rem;
+	pointer-events: none;
+	-webkit-animation: App-logo-spin infinite 20s linear;
+	animation: App-logo-spin infinite 20s linear;
+}
+
+.App-logo-container {
+	margin-top: 0.5em;
+}
+
+
+/*Create the fixed position Flexbox header, the gradient is the same as the main gradient at the very top*/
+
+.App-header {
+	display: -webkit-box;
+	display: -ms-flexbox;
+	display: flex;
+	-webkit-box-align: center;
+	-ms-flex-align: center;
+	align-items: center;
+	text-align: center;
+	z-index: 1;
+	-webkit-box-pack: center;
+	-ms-flex-pack: center;
+	justify-content: center;
+	position: fixed;
+	width: 100vw;
+	height: 100px;
+	background: -webkit-gradient(linear, left top, left bottom, from(#00d4ff), to(#00cdf5));
+	background: linear-gradient(#00d4ff, #00cdf5);
+}
+
+.App-header h1 {
+	color: white;
+	margin-right: 20px;
+}
+
+
+/*Makes the app body, with just enough padding at the top to escape being covered up by the fixed header*/
+
+.App-body {
+	display: -webkit-box;
+	display: -ms-flexbox;
+	display: flex;
+	-webkit-box-align: center;
+	-ms-flex-align: center;
+	align-items: center;
+	padding-top: 100px;
+	background: -webkit-gradient(linear, left top, left bottom, from(#00d4ff), to(#282c34));
+	background: linear-gradient(#00d4ff, #282c34);
+	min-height: 300vh;
+	-webkit-box-orient: vertical;
+	-webkit-box-direction: normal;
+	-ms-flex-direction: column;
+	flex-direction: column;
+	font-size: calc(10px + 2vmin);
+	color: white;
+}
+
+
+/*These are the outer divs of the text elements*/
+
+.outerDiv {
+	display: -webkit-box;
+	display: -ms-flexbox;
+	display: flex;
+	background-color: #C0C0C0;
+	padding: 20px;
+	width: 80%;
+	margin: 20px;
+}
+
+
+/*These are the code outerdivs that got changed to grid*/
+
+.codeOuterDiv {
+	display: -ms-grid;
+	display: grid;
+	-ms-grid-rows: (minmax(100px, 1fr))[auto-fit];
+	grid-template-rows: repeat(auto-fit, minmax(100px, 1fr));
+	-ms-grid-columns: (minmax(300px, 1fr))[auto-fit];
+	grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+	background-color: #C0C0C0;
+	padding: 20px;
+	width: 80%;
+	margin: 20px;
+}
+
+
+/*Keyframes that make the logo spin*/
+
+@-webkit-keyframes App-logo-spin {
+	from {
+		-webkit-transform: rotate(0deg);
+		transform: rotate(0deg);
+	}
+	to {
+		-webkit-transform: rotate(360deg);
+		transform: rotate(360deg);
+	}
+}
+
+@keyframes App-logo-spin {
+	from {
+		-webkit-transform: rotate(0deg);
+		transform: rotate(0deg);
+	}
+	to {
+		-webkit-transform: rotate(360deg);
+		transform: rotate(360deg);
+	}
+}
+
+@-webkit-keyframes sheen {
+	0% {
+		-webkit-transform: skewY(-45deg) translateX(0);
+		transform: skewY(-45deg) translateX(0);
+	}
+	100% {
+		-webkit-transform: skewY(-45deg) translateX(12.5em);
+		transform: skewY(-45deg) translateX(12.5em);
+	}
+}
+
+@keyframes sheen {
+	0% {
+		-webkit-transform: skewY(-45deg) translateX(0);
+		transform: skewY(-45deg) translateX(0);
+	}
+	100% {
+		-webkit-transform: skewY(-45deg) translateX(12.5em);
+		transform: skewY(-45deg) translateX(12.5em);
+	}
+}
+
+
+/*Styling for the shiny button*/
+
+.clockButton {
+	/*Base button styling nothing too special*/
+	padding: 0.75em 2em;
+	text-align: center;
+	text-decoration: none;
+	color: #2194E0;
+	border: 2px solid #2194E0;
+	font-size: 24px;
+	display: inline-block;
+	border-radius: 0.3em;
+	-webkit-transition: all 0.2s ease-in-out;
+	transition: all 0.2s ease-in-out;
+	position: relative;
+	overflow: hidden;
+	/*Create a before element which will be the reflection*/
+	/*On hover make the sheen move through the button*/
+}
+
+.clockButton:before {
+	content: "";
+	background-color: rgba(255, 255, 255, 0.5);
+	height: 100%;
+	width: 3em;
+	display: block;
+	position: absolute;
+	top: 0;
+	left: -4.5em;
+	-webkit-transform: skewX(-45deg) translateX(0);
+	transform: skewX(-45deg) translateX(0);
+	-webkit-transition: none;
+	transition: none;
+}
+
+.clockButton:hover {
+	background-color: #2194E0;
+	color: #fff;
+	border-bottom: 4px solid #1977b5;
+}
+
+.clockButton:hover:before {
+	-webkit-transform: skewX(-45deg) translateX(13.5em);
+	transform: skewX(-45deg) translateX(13.5em);
+	-webkit-transition: all 0.5s ease-in-out;
+	transition: all 0.5s ease-in-out;
+}
+
+
+/*# sourceMappingURL=speedrun.css.map */
